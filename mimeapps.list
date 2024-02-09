@@ -1,0 +1,6 @@
+
+[Default Applications]
+png=sxiv.desktop
+jpg=sxiv.desktop
+png,jpg=sxiv.desktop
+image/png,image/jpg=sxiv.desktop
