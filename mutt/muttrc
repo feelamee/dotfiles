@@ -71,13 +71,13 @@ set mail_check=60
 set imap_keepalive=300
   
 # POP3 account settings
-set pop_user = "Gleb.Yakavinich"
+set pop_user = "Gleb.Yakavinich@felenasoft.ru"
 set pop_pass = "`pass show mail/$pop_user@felenasoft.ru`"
-set pop_host = pop://$pop_user:$pop_pass@mail.felenasoft.ru:995
+set pop_host = pops://$pop_user:$pop_pass@mail.felenasoft.ru:995
 
 # personality settings
 set realname = "Hleb Yakavinich"
-set from = $pop_user@felenasoft.ru
+set from = $pop_user@mail.felenasoft.ru
 set smtp_pass = $pop_pass
 set ssl_force_tls = yes
 

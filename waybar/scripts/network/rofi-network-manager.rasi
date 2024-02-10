@@ -12,8 +12,8 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "~/.config/waybar/scripts/network/colors.rasi"
-@import                          "~/.config/rofi/fonts.rasi"
+@import                          "colors.rasi"
+@import                          "fonts.rasi"
 
 * {
     border-colour:               var(selected);
