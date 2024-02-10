@@ -32,6 +32,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
+set number relativenumber
 
 " Enable filetype plugins
 filetype plugin on
@@ -131,16 +132,9 @@ set belloff=all
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
-
+"
 " Set regular expression engine automatically
 set regexpengine=0
-
-try
-    colorscheme default
-catch
-endtry
-
-set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -148,15 +142,6 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-hi Error ctermfg=0
-hi SpellBad ctermfg=0
-hi SpellCap ctermfg=0
-
-hi TabLine ctermfg=0 ctermbg=7
-hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
-hi TabLineSel ctermfg=0 ctermbg=81
-hi StatusLine ctermfg=81
-hi ModeMsg ctermbg=3 ctermfg=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -201,7 +186,7 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable highlight when <leader><cr> is pressed
+" Disable highlight  fdslfjddl when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
@@ -359,4 +344,17 @@ endif
 
 call plug#begin()
 
+Plug 'rose-pine/vim'
+
 call plug#end()
+
+let g:disable_bg = 1
+colorscheme rosepine_moon
+hi Search ctermfg=7 ctermbg=10
+"hi SpellBad ctermfg=0
+"hi SpellCap ctermfg=0
+
+hi TabLine ctermfg=189 ctermbg=NONE
+hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
+hi TabLineSel ctermfg=81 ctermbg=NONE cterm=underline
+hi StatusLine ctermfg=81 ctermbg=NONE 

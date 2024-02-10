@@ -1,7 +1,7 @@
 no-sudo
 
 linux_display_server wayland
-# wayland_titlebar_color background
+wayland_titlebar_color background
 
 font_family Isoevka Nerd Font
 bold_font        auto
@@ -19,7 +19,4 @@ confirm_os_window_close 0
 
 touch_scroll_multiplier 5.0
 
-# BEGIN_KITTY_THEME
-# Rosé Pine Moon
-include current-theme.conf
-# END_KITTY_THEME
+include rose-pine-moon.conf
