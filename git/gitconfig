@@ -1,0 +1,7 @@
+[user]
+	email = fosterlounch@gmail.com
+	name = Hleb Yakavinich
+[core]
+	editor = vim
+[init]
+	defaultBranch = master
