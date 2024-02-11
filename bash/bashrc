@@ -13,3 +13,4 @@ export PATH="${PATH}:${HOME}/.local/bin"
 complete -F _command doas
 
 PS1='[\u@\h \W]\$ '
+neofetch
