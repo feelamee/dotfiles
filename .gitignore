@@ -12,3 +12,9 @@ cmus/playlists/
 obsidian/
 vim/plugged/
 QtProject.conf
+qBittorrent/
+docker/buildx/
+docker/.*
+
+anilibrix/*
+!anilibrix/Preferences

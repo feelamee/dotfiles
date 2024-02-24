@@ -1,6 +1,12 @@
-
 [Default Applications]
 png=sxiv.desktop
 jpg=sxiv.desktop
 png,jpg=sxiv.desktop
 image/png,image/jpg=sxiv.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-REFKJ2.desktop
+message/rfc822=userapp-Thunderbird-REFKJ2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-REFKJ2.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-REFKJ2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-REFKJ2.desktop;
