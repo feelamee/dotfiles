@@ -18,3 +18,10 @@ docker/.*
 
 anilibrix/*
 !anilibrix/Preferences
+
+Xeoma/
+
+Code - OSS/*
+!Code - OSS/User/
+Code - OSS/User/*
+!Code - OSS/User/settings.json
