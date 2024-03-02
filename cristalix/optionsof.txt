@@ -5,9 +5,9 @@ ofOcclusionFancy:false
 ofSmoothFps:false
 ofSmoothWorld:true
 ofAoLevel:1.0
-ofClouds:0
-ofCloudsHeight:0.42957747
-ofTrees:0
+ofClouds:2
+ofCloudsHeight:0.6197183
+ofTrees:2
 ofDroppedItems:0
 ofRain:0
 ofAnimatedWater:0

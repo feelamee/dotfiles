@@ -25,3 +25,5 @@ Code - OSS/*
 !Code - OSS/User/
 Code - OSS/User/*
 !Code - OSS/User/settings.json
+
+subversion/auth
