@@ -70,7 +70,7 @@ au FocusGained,BufEnter * silent! checktime
 " like <leader>w saves the current file
 let mapleader = ","
 
-" :W sudo saves the file
+" :W doas saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !doas tee % > /dev/null' <bar> edit!
 
@@ -265,7 +265,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
-map 0 ^
+" map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z

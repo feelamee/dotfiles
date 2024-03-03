@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "47950470316031a5",
+        "id": "6a70950f59aa0167",
         "type": "tabs",
         "children": [
           {
-            "id": "0e7d83ad572aa79a",
+            "id": "e4f2dbfce0a19a34",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -138,18 +138,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0e7d83ad572aa79a",
+  "active": "e4f2dbfce0a19a34",
   "lastOpenFiles": [
+    "daily/2024-02-25.md",
+    "первый контрибьют в open source!!!.md",
+    "github.com/zed-industries/zed.md",
+    "compiler.md",
+    "github.com/zed-industries",
+    "github.com",
+    "Untitled 1.md",
+    "pets.md",
+    "tsh.md",
+    "daily/2024-03-03.md",
+    "daily",
+    "2024-03-03.md",
+    "todo",
     "0093099 H.266 для ffmpeg/2024-02-28.md",
     "0093099 H.266 для ffmpeg/2024-03-01.md",
     "0093099 H.266 для ffmpeg/2024-02-29.md",
     "^1.md",
     "[[.md",
     "1.md",
-    "Untitled 1.md",
     "0093099 H.266 для ffmpeg",
     "Welcome.md",
-    "readme.md",
-    "TODO.md"
+    "readme.md"
   ]
 }
