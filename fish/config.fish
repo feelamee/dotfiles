@@ -17,6 +17,6 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
 #export _JAVA_OPTIONS="-Djavafx.cachedir=$XDG_CACHE_HOME/openjfx"
 #export _JAVA_OPTIONS="$_JAVA_OPTIONS:-Djava.util.prefs.userRoot=$XDG_CACHE_HOME/java"
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+export PASSWORD_STORE_DIR="$HOME/.password-store"
 
 export PATH="$PATH":"$HOME/.local/bin"

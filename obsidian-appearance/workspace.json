@@ -1,0 +1,155 @@
+{
+  "main": {
+    "id": "0d3899ff3ab14e8d",
+    "type": "split",
+    "children": [
+      {
+        "id": "47950470316031a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e7d83ad572aa79a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d4453345ffdd27b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c083173ef4d02de",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b6dae822c64af972",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "58f82634aaaf249a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ffa6e52349fc25d3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a69fe95577decac0",
+    "type": "split",
+    "children": [
+      {
+        "id": "c96dae1a5c4444b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "54a584ad1191c9ec",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "29e1e2f2e831fe8a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "943ce4a89de963db",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "274684bb94102a50",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "0e7d83ad572aa79a",
+  "lastOpenFiles": [
+    "0093099 H.266 для ffmpeg/2024-02-28.md",
+    "0093099 H.266 для ffmpeg/2024-03-01.md",
+    "0093099 H.266 для ffmpeg/2024-02-29.md",
+    "^1.md",
+    "[[.md",
+    "1.md",
+    "Untitled 1.md",
+    "0093099 H.266 для ffmpeg",
+    "Welcome.md",
+    "readme.md",
+    "TODO.md"
+  ]
+}
