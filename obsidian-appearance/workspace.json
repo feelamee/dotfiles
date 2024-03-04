@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "6a70950f59aa0167",
+        "id": "bdfad1cb0d5c765a",
         "type": "tabs",
         "children": [
           {
-            "id": "e4f2dbfce0a19a34",
+            "id": "74e224973911940b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "0093099 H.266 для ffmpeg/2024-03-04.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "0093099 H.266 для ffmpeg/2024-03-04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "0093099 H.266 для ffmpeg/2024-03-04.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "0093099 H.266 для ffmpeg/2024-03-04.md"
+              }
             }
           }
         ]
@@ -138,23 +146,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e4f2dbfce0a19a34",
+  "active": "74e224973911940b",
   "lastOpenFiles": [
-    "daily/2024-02-25.md",
+    "0093099 H.266 для ffmpeg/2024-03-01.md",
+    "0093099 H.266 для ffmpeg/2024-03-04.md",
     "первый контрибьют в open source!!!.md",
-    "github.com/zed-industries/zed.md",
+    "tsh.md",
+    "img/my-first-contribute.png",
+    "Untitled 1.md",
+    "img",
     "compiler.md",
+    "daily/2024-02-25.md",
+    "github.com/zed-industries/zed.md",
     "github.com/zed-industries",
     "github.com",
-    "Untitled 1.md",
     "pets.md",
-    "tsh.md",
     "daily/2024-03-03.md",
     "daily",
     "2024-03-03.md",
     "todo",
     "0093099 H.266 для ffmpeg/2024-02-28.md",
-    "0093099 H.266 для ffmpeg/2024-03-01.md",
     "0093099 H.266 для ffmpeg/2024-02-29.md",
     "^1.md",
     "[[.md",

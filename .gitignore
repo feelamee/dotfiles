@@ -27,3 +27,8 @@ Code - OSS/User/*
 !Code - OSS/User/settings.json
 
 subversion/auth
+
+zed/*
+!zed/keymap.json
+!zed/settings.json
+!zed/themes/
