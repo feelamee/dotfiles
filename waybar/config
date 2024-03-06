@@ -34,8 +34,8 @@
         "format": "{}",
         "format-en": "US",
         "format-ru": "RU",
-        "keyboard-name": "at-translated-set-2-keyboard",
-        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+        "keyboard-name": "ganss-ardor-wakizashi",
+        "on-click": "hyprctl switchxkblayout ganss-ardor-wakizashi next"
     },
 
     "cpu": {

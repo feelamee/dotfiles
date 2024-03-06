@@ -71,6 +71,7 @@ key_key.hotbar.1:2
 key_key.forward:17
 key_key.drop:16
 key_key.fastCircle:47
+key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.c560e576-a6f8-4a9a-9ab3-8e01fceb2b91:52
 key_key.screenshot:60
 key_key.sprint:29
 key_of.key.zoom:34
@@ -81,7 +82,7 @@ key_key.attack:-100
 key_key.chat:20
 key_key.inventory:18
 key_key.playerlist:15
-soundCategory_master:0.6225166
+soundCategory_master:0.26490065
 soundCategory_music:0.0
 soundCategory_record:0.0
 soundCategory_weather:0.0

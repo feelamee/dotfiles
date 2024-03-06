@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "0b743de8-5b26-4a20-b232-56f4799cf161",
+    "userEditable": false,
+    "order": 0,
+    "name": "Быстрые бинды",
+    "enabled": true,
+    "keybinds": []
+  }
+]
