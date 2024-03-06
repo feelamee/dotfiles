@@ -14,7 +14,7 @@
 ###   gpg-agent            (Unix-like systems)
 ###   keychain             (Mac OS X)
 ###   windows-cryptoapi    (Windows)
-password-stores = gpg-agent
+#password-stores = gpg-agent
 ### To disable all password stores, use an empty list:
 # password-stores =
 ###
@@ -38,8 +38,8 @@ password-stores = gpg-agent
 ### specified in the 'servers' file in your config directory
 ### and are documented there. Anything specified in this section 
 ### is overridden by settings specified in the 'servers' file.
-store-passwords = yes
-store-auth-creds = yes
+#store-passwords = yes
+#store-auth-creds = yes
 
 ### Section for configuring external helper applications.
 [helpers]

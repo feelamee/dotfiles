@@ -7,8 +7,8 @@ renderDistance:12
 guiScale:3
 particles:0
 bobView:true
-enableVsync:true
-maxFps:260
+enableVsync:false
+maxFps:105
 fboEnable:true
 fancyGraphics:true
 ao:2

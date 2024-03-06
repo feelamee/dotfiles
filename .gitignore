@@ -10,6 +10,7 @@ cmus/search-history
 cmus/lib.pl
 cmus/playlists/
 obsidian/
+obsidian-appearance/workspace.json
 vim/plugged/
 QtProject.conf
 qBittorrent/
