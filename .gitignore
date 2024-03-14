@@ -33,3 +33,5 @@ zed/*
 !zed/keymap.json
 !zed/settings.json
 !zed/themes/
+
+OpenRGB/
