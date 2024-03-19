@@ -35,3 +35,5 @@ zed/*
 !zed/themes/
 
 OpenRGB/
+
+qalculate/qalc.history
