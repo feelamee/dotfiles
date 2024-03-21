@@ -5,7 +5,7 @@ fov:0.0
 gamma:4.084507
 renderDistance:12
 guiScale:3
-particles:0
+particles:1
 bobView:true
 enableVsync:false
 maxFps:105
@@ -82,7 +82,7 @@ key_key.attack:-100
 key_key.chat:20
 key_key.inventory:18
 key_key.playerlist:15
-soundCategory_master:0.26490065
+soundCategory_master:0.18543047
 soundCategory_music:0.0
 soundCategory_record:0.0
 soundCategory_weather:0.0
