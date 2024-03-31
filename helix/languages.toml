@@ -53,7 +53,7 @@ shebangs = ["sh", "bash", "dash", "zsh"]
 roots = []
 comment-token = "#"
 language-servers = [ "bash-language-server" ]
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 4, unit = "    " }
 
 [[grammar]]
 name = "bash"
@@ -74,7 +74,8 @@ file-types = ["c"] # TODO: ["h"]
 roots = []
 comment-token = "//"
 language-servers = [ "clangd" ]
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "clang-format", args = [""] }
 
 [language.debugger]
 name = "lldb-vscode"
@@ -119,7 +120,9 @@ file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", 
 roots = []
 comment-token = "//"
 language-servers = [ "clangd" ]
-indent = { tab-width = 2, unit = "  " }
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "clang-format", args = ["--style", "gnu"] }
+
 
 [language.debugger]
 name = "lldb-vscode"

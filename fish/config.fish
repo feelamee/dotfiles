@@ -3,7 +3,6 @@ export VISUAL=helix
 export PAGER=bat
 
 alias ya=yazi
-zoxide init fish | source
 
 export XDG_CONFIG_HOME="$(xdg-user-dir CONFIG)"
 export XDG_DATA_HOME="$(xdg-user-dir DATA)"
@@ -22,4 +21,7 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 export PATH="$PATH":"$HOME/.local/bin"
 
 alias hx=helix
-alias pm=pacman
+
+zoxide init fish | source
+direnv hook fish | source
+set -g direnv_fish_mode disable_arrow 
