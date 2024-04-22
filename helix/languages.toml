@@ -59,12 +59,23 @@ indent = { tab-width = 4, unit = "    " }
 name = "bash"
 source = { git = "https://github.com/tree-sitter/tree-sitter-bash", rev = "275effdfc0edce774acf7d481f9ea195c6c403cd" }
 
+#####################################################
+#                                                   #     
+#                      clangd                       #     
+#                                                   #     
+#####################################################
+
+[language-server.clangd]
+command = "clangd"
+args = [ "--compile-commands-dir=target/" ]
+
 
 #####################################################
 #                                                   #     
 #                        C                          #     
 #                                                   #     
 #####################################################
+
 
 [[language]]
 name = "c"
@@ -73,9 +84,9 @@ injection-regex = "c"
 file-types = ["c"] # TODO: ["h"]
 roots = []
 comment-token = "//"
-language-servers = [ "clangd" ]
 indent = { tab-width = 4, unit = "    " }
-formatter = { command = "clang-format", args = [""] }
+formatter = { command = "clang-format", args = ["--style=file"] }
+auto-format = true
 
 [language.debugger]
 name = "lldb-vscode"
@@ -116,13 +127,12 @@ source = { git = "https://github.com/tree-sitter/tree-sitter-c", rev = "7175a6dd
 name = "cpp"
 scope = "source.cpp"
 injection-regex = "cpp"
-file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", { suffix = ".hpp.in" }, { suffix = ".h.in" }]
+file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", ".hpp.in", ".h.in"]
 roots = []
 comment-token = "//"
-language-servers = [ "clangd" ]
 indent = { tab-width = 4, unit = "    " }
-formatter = { command = "clang-format", args = ["--style", "gnu"] }
-
+formatter = { command = "clang-format", args = ["--style=file"] }
+auto-format = true
 
 [language.debugger]
 name = "lldb-vscode"

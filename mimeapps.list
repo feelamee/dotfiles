@@ -6,7 +6,10 @@ image/png,image/jpg=sxiv.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-REFKJ2.desktop
 message/rfc822=userapp-Thunderbird-REFKJ2.desktop
 x-scheme-handler/mid=userapp-Thunderbird-REFKJ2.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-REFKJ2.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-REFKJ2.desktop;
+x-scheme-handler/tg=org.telegram.desktop.desktop;
+text/plain=helix.desktop;

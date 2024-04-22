@@ -27,14 +27,14 @@
     },
     "clock": {
         "format": "{:%I:%M %p}",
-        "format-alt": "{:%A, %e %B %Y, %I:%M %p}",
+        "format-alt": "{:%A,%e %B %Y, %I:%M %p}",
     },
 
     "hyprland/language": {
         "format": "{}",
         "format-en": "US",
         "format-ru": "RU",
-        "keyboard-name": "ganss-ardor-wakizashi",
+        "keyboard-name": "at-translated-set-2-keyboard",
         "on-click": "hyprctl switchxkblayout ganss-ardor-wakizashi next"
     },
 

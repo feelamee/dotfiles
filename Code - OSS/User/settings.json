@@ -1,3 +1,7 @@
 {
-    "workbench.colorTheme": "Abyss"
+    "workbench.colorTheme": "Abyss",
+    "keyboard.dispatch": "keyCode",
+    "explorer.confirmDelete": false,
+    "terminal.explorerKind": "external",
+    "terminal.external.linuxExec": "kitty"
 }

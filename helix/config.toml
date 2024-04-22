@@ -3,6 +3,10 @@ theme = "rose_pine_moon"
 [editor]
 line-number = "relative"
 mouse = false
+auto-format = true
+default-line-ending = "lf"
+insert-final-newline = true
+
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,4 +15,26 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+ignore = true
 
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+tab = "→"
+newline = "⇽"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+[editor.lsp]
+enable = true
+# display-inlay-hints = true
+display-signature-help-docs = true
+snippets = true
+
+[keys.insert]
+"esc" = [":run-shell-command hyprctl switchxkblayout at-translated-set-2-keyboard 0 &>/dev/null", "normal_mode"]

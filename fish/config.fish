@@ -1,5 +1,11 @@
-export EDITOR=helix
-export VISUAL=helix
+if command -v helix &> /dev/null
+  set hx helix
+else
+  set hx hx
+end
+
+export EDITOR=$hx
+export VISUAL=$hx
 export PAGER=bat
 
 alias ya=yazi
@@ -20,7 +26,7 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 
 export PATH="$PATH":"$HOME/.local/bin"
 
-alias hx=helix
+alias hx=$hx
 
 zoxide init fish | source
 direnv hook fish | source
