@@ -1,6 +1,6 @@
 [user]
 	email = fosterlounch@gmail.com
-	name = Hleb Yakavinich
+	name = feelamee
 [core]
 	editor = helix
 [init]
@@ -19,7 +19,9 @@
 	date = format:%D %I:%M %p
 [pretty]
 	useful = %<(7 trunc)%Cblue%h %<|(80 trunc)%C(3)%s %>|(-29 ltruct)%Cgreen%an %>|(-9 ltrunc)%Creset%ad
-[format]
-	pretty = useful
+[alias]
+	logg = log --format=short --graph
 [status]
 	short = true
+[commit]
+	gpgSign = false

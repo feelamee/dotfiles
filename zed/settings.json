@@ -1,3 +1,8 @@
 {
-    "theme": "Ayu Dark"
+    "base_keymap": "JetBrains",
+    "telemetry": {
+        "metrics": false
+    },
+    "vim_mode": true,
+    "theme": "Atelier Lakeside Dark"
 }

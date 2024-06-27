@@ -5,9 +5,9 @@ ofOcclusionFancy:false
 ofSmoothFps:false
 ofSmoothWorld:true
 ofAoLevel:1.0
-ofClouds:2
-ofCloudsHeight:0.6197183
-ofTrees:2
+ofClouds:0
+ofCloudsHeight:0.471831
+ofTrees:0
 ofDroppedItems:0
 ofRain:0
 ofAnimatedWater:0
@@ -52,7 +52,7 @@ ofRenderRegions:false
 ofSmartAnimations:false
 ofDynamicFov:true
 ofAlternateBlocks:true
-ofDynamicLights:2
+ofDynamicLights:3
 ofScreenshotSize:1
 ofCustomEntityModels:true
 ofCustomGuis:true

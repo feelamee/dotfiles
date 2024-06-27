@@ -35,7 +35,6 @@ window#waybar.hidden {
 #language,
 #custom-power-menu,
 #custom-launcher,
-#custom-spotify,
 #custom-weather,
 #custom-weather.severe,
 #custom-weather.sunnyDay,
@@ -218,6 +217,8 @@ window#waybar.hidden {
   font-family: Iosevka Nerd Font;
   font-weight: bold;
   margin-top: 7px;
+  margin-left: 90px;
+  margin-right: 90px;
   margin-bottom: 7px;
 }
 

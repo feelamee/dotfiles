@@ -38,3 +38,4 @@ snippets = true
 
 [keys.insert]
 "esc" = [":run-shell-command hyprctl switchxkblayout at-translated-set-2-keyboard 0 &>/dev/null", "normal_mode"]
+

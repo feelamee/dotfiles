@@ -1,3 +1,11 @@
+[language-server.clangd]
+command = "clangd"
+args = [ "--compile-commands-dir=build/", "--header-insertion=iwyu", "--clang-tidy" ]
+
+[language-server.cmake-language-server]
+command = "cmake-language-server"
+
+
 #####################################################
 #                                                   #     
 #                        Bash                       #     
@@ -61,17 +69,6 @@ source = { git = "https://github.com/tree-sitter/tree-sitter-bash", rev = "275ef
 
 #####################################################
 #                                                   #     
-#                      clangd                       #     
-#                                                   #     
-#####################################################
-
-[language-server.clangd]
-command = "clangd"
-args = [ "--compile-commands-dir=target/" ]
-
-
-#####################################################
-#                                                   #     
 #                        C                          #     
 #                                                   #     
 #####################################################
@@ -104,12 +101,6 @@ name = "attach"
 request = "attach"
 completion = [ "pid" ]
 args = { console = "internalConsole", pid = "{0}" }
-
-[[language.debugger.templates]]
-name = "gdbserver attach"
-request = "attach"
-completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
-args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
 
 [[grammar]]
 name = "c"
@@ -161,3 +152,69 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 name = "cpp"
 source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "670404d7c689be1c868a46f919ba2a3912f2b7ef" }
 
+
+#####################################################
+#                                                   #     
+#                        CMake                      #     
+#                                                   #     
+#####################################################
+
+
+[[language]]
+name = "cmake"
+scope = "source.cmake"
+file-types = ["cmake", { glob = "CMakeLists.txt" }]
+comment-token = "#"
+block-comment-tokens = { start = "#[[", end = "]]" }
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "cmake-language-server" ]
+injection-regex = "cmake"
+formatter = { command = "cmake-format", args = ["-"] }
+auto-format = true
+
+[[grammar]]
+name = "cmake"
+source = { git = "https://github.com/uyha/tree-sitter-cmake", rev = "6e51463ef3052dd3b328322c22172eda093727ad" }
+
+
+#####################################################
+#                                                   #     
+#                        make                       #     
+#                                                   #     
+#####################################################
+
+
+[[language]]
+name = "make"
+scope = "source.make"
+file-types = [{ glob = "Makefile" }, { glob = "makefile" }, "make", "mk", "mak", {glob = "GNUmakefile" }, { glob = "OCamlMakefile" }]
+shebangs = ["make", "gmake"]
+injection-regex = "(make|makefile|Makefile|mk)"
+comment-token = "#"
+indent = { tab-width = 4, unit = "\t" }
+
+[[grammar]]
+name = "make"
+source = { git = "https://github.com/alemuller/tree-sitter-make", rev = "a4b9187417d6be349ee5fd4b6e77b4172c6827dd" }
+
+#####################################################
+#                                                   #     
+#                        clojure                    #     
+#                                                   #     
+#####################################################
+
+clojure-lsp = { command = "clojure-lsp" }
+
+[[language]]
+name = "clojure"
+scope = "source.clojure"
+injection-regex = "(clojure|clj|edn|boot)"
+file-types = ["clj", "cljs", "cljc", "clje", "cljr", "cljx", "edn", "boot"]
+roots = ["project.clj", "build.boot", "deps.edn", "shadow-cljs.edn"]
+comment-token = ";"
+language-servers = [ "clojure-lsp" ]
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "clojure"
+source = { git = "https://github.com/sogaiu/tree-sitter-clojure", rev = "e57c569ae332ca365da623712ae1f50f84daeae2" }
