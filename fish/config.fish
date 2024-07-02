@@ -4,9 +4,9 @@ else
     set hx hx
 end
 
-export EDITOR=$hx
-export VISUAL=$hx
-export PAGER=bat
+export EDITOR="$hx"
+export VISUAL="$hx"
+export PAGER="bat --style=plain"
 
 alias ya=yazi
 
