@@ -16,6 +16,8 @@ QtProject.conf
 qBittorrent/
 docker/buildx/
 docker/.*
+qt6ct/
+godot/
 
 anilibrix/*
 !anilibrix/Preferences
@@ -45,3 +47,5 @@ Element/
 java/fonts
 
 gh/hosts.yml
+
+Kitware/
