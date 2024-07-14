@@ -89,7 +89,7 @@
       "format-icons": ["󱊡", "󱊢", "󱊣"]
     },
     "custom/weather": {
-      "exec": "curl 'wttr.in/?format=3'",
+      "exec": "curl wttr.in/?format=3",
       "restart-interval": 600,
       "return-type": "text",
     },   

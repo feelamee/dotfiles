@@ -16,7 +16,7 @@
 ###   windows-cryptoapi    (Windows)
 # password-stores = gpg-agent,gnome-keyring,kwallet
 ### To disable all password stores, use an empty list:
-# password-stores =
+password-stores = gpg-agent
 ###
 ### Set KWallet wallet used by Subversion. If empty or unset,
 ### then the default network wallet will be used.
@@ -38,8 +38,8 @@
 ### specified in the 'servers' file in your config directory
 ### and are documented there. Anything specified in this section 
 ### is overridden by settings specified in the 'servers' file.
-# store-passwords = no
-# store-auth-creds = no
+store-passwords = yes
+store-auth-creds = yes
 
 ### Section for configuring external helper applications.
 [helpers]

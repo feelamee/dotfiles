@@ -1,24 +1,9 @@
 [
   {
     "name": "Быстрые бинды",
-    "order": 0,
-    "keybinds": [
-      {
-        "userEditable": true,
-        "onDown": {
-          "raw": false,
-          "chat": [
-            "/help"
-          ]
-        },
-        "downInterval": 0,
-        "name": "/hub",
-        "id": "b62e29b7-0cae-405c-8f07-de1bcf9abc17",
-        "defaultBinding": 0,
-        "upInterval": 0
-      }
-    ],
     "userEditable": false,
+    "order": 0,
+    "keybinds": [],
     "enabled": true,
     "id": "0b743de8-5b26-4a20-b232-56f4799cf161"
   }

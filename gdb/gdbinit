@@ -1,0 +1,9 @@
+define nr
+	next
+	refresh
+end
+
+define sr
+	step
+	refresh
+end

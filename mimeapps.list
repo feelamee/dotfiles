@@ -7,7 +7,7 @@ x-scheme-handler/mailto=userapp-Thunderbird-REFKJ2.desktop
 message/rfc822=userapp-Thunderbird-REFKJ2.desktop
 x-scheme-handler/mid=userapp-Thunderbird-REFKJ2.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
-application/pdf=/usr/share/applications/org.pwmt.zathura.desktop
+application/pdf=org.pwmt.zathura.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-REFKJ2.desktop;

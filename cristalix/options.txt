@@ -52,7 +52,9 @@ key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.3366ef64-ccd3-467c-b7fa-eeb9
 key_dev.i18n:0
 key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.e1625465-e40f-4491-b678-01b2b13c6f60:0
 key_ion:1343
+key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.9e0c929d-6994-4448-ab74-6b9b537befd2:33
 key_key.swapHands:0
+key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.d79b39ab-76ae-41cc-9119-acdf04e6672c:0
 key_key.hotbar.2:3
 key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.b62e29b7-0cae-405c-8f07-de1bcf9abc17:0
 key_key.hotbar.4:5
@@ -76,9 +78,9 @@ key_key.marker.top:0
 key_key.hotbar.7:-97
 key_key.pickItem:-98
 key_key.sneak:42
-key_key.voice.ptt:209
-key_key.saveToolbarActivator:46
 key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.3879d341-bfef-450b-ad22-40f2e9811ca8:40
+key_key.saveToolbarActivator:46
+key_key.voice.ptt:209
 key_key.hotbar.8:33
 key_key.use:-99
 key_key.hotbar.6:-96
@@ -91,6 +93,7 @@ key_dev.emoji:0
 key_key.hotbar.5:6
 key_key.hotbar.1:2
 key_key.drop:16
+key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.e43e68c8-41e3-4f6f-900e-13c096adfadc:0
 key_key.custom.0b743de8-5b26-4a20-b232-56f4799cf161.c560e576-a6f8-4a9a-9ab3-8e01fceb2b91:52
 key_of.key.zoom:34
 key_key.right:32

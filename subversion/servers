@@ -132,5 +132,5 @@
 # ssl-authority-files = /path/to/CAcert.pem;/path/to/CAcert2.pem
 #
 # Password / passphrase caching parameters:
-# store-passwords = no
+store-passwords = yes
 # store-ssl-client-cert-pp = no
