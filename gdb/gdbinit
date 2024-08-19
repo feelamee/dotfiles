@@ -1,9 +1,9 @@
-define nr
+define hook-next
 	next
 	refresh
 end
 
-define sr
+define hook-step
 	step
 	refresh
 end

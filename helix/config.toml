@@ -32,7 +32,7 @@ tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
 [editor.lsp]
 enable = true
-# display-inlay-hints = true
+display-inlay-hints = false
 display-signature-help-docs = true
 snippets = true
 

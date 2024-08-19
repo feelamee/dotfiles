@@ -8,9 +8,11 @@ message/rfc822=userapp-Thunderbird-REFKJ2.desktop
 x-scheme-handler/mid=userapp-Thunderbird-REFKJ2.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-REFKJ2.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-REFKJ2.desktop;
 x-scheme-handler/tg=org.telegram.desktop.desktop;
 text/plain=helix.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;

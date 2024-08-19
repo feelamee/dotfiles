@@ -33,6 +33,8 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
 alias adb='HOME="$XDG_DATA_HOME"/android command adb'
 
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+
 export PATH="$PATH":"$HOME/.local/bin"
 
 export XCURSOR_PATH="/usr/share/icons:$XDG_DATA_HOME/icons"
@@ -50,6 +52,8 @@ export XMAKE_GLOBALDIR="$XDG_CONFIG_HOME"/xmake
 export CONAN_HOME="$XDG_DATA_HOME/conan2"
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+
+export VCACHE="$XDG_CACHE_HOME/vlang"
 
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
