@@ -31,7 +31,10 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 
 export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
-alias adb='HOME="$XDG_DATA_HOME"/android command adb'
+function adb
+    set HOME "$ANDROID_USER_HOME"
+    command adb $argv
+end
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 
@@ -55,7 +58,10 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
 export VCACHE="$XDG_CACHE_HOME/vlang"
 
-alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+function svn
+    set SVN_CONFIG_DIR "$XDG_CONFIG_HOME/subversion"
+    command svn $argv
+end
 
 alias hx=$hx
 
