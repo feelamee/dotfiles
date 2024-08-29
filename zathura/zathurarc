@@ -39,3 +39,7 @@ set recolor-darkcolor           "#e0def4"
 
 set recolor                     "false"
 set recolor-keephue             "true"
+
+set selection-clipboard clipboard
+set font "JetBrains Mono Nerd Font 16"
+set scroll-step 200

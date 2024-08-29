@@ -1,10 +1,10 @@
 [
   {
-    "name": "Быстрые бинды",
+    "order": 0,
+    "enabled": true,
     "id": "0b743de8-5b26-4a20-b232-56f4799cf161",
     "keybinds": [],
     "userEditable": false,
-    "order": 0,
-    "enabled": true
+    "name": "Быстрые бинды"
   }
 ]

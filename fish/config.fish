@@ -58,9 +58,10 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
 export VCACHE="$XDG_CACHE_HOME/vlang"
 
+export SVN_CONFIG_DIR="$XDG_CONFIG_HOME/subversion"
+
 function svn
-    set SVN_CONFIG_DIR "$XDG_CONFIG_HOME/subversion"
-    command svn $argv
+    command svn --config-dir "$SVN_CONFIG_DIR" $argv
 end
 
 alias hx=$hx
