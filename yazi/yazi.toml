@@ -50,6 +50,8 @@ play = [
 
 [open]
 rules = [
+  { name = "*.txt", mime = "application/octet-stream", use = "edit" },
+
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 
 	{ mime = "text/*",  use = [ "edit", "reveal" ] },

@@ -50,3 +50,6 @@ gh/hosts.yml
 
 Kitware/
 blender/
+
+heroic/*
+!heroic/config.json

@@ -36,7 +36,7 @@ chatHeightFocused:1.0
 chatHeightUnfocused:0.44366196
 chatScale:1.0
 chatWidth:1.0
-mipmapLevels:4
+mipmapLevels:3
 forceUnicodeFont:false
 reducedDebugInfo:false
 entityShadows:true

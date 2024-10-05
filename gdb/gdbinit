@@ -17,3 +17,5 @@ end
 add-auto-load-safe-path ~/work/projects/branches/develop/mgraph/xeoma/bin/linux64/.gdbinit
 
 alias rwo = run &>/dev/null
+
+set print static-members off

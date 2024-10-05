@@ -38,8 +38,6 @@ end
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 
-export PATH="$PATH":"$HOME/.local/bin"
-
 export XCURSOR_PATH="/usr/share/icons:$XDG_DATA_HOME/icons"
 
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java -Djavafx.cachedir=$XDG_CACHE_HOME/openjfx"
@@ -63,6 +61,16 @@ export SVN_CONFIG_DIR="$XDG_CONFIG_HOME/subversion"
 function svn
     command svn --config-dir "$SVN_CONFIG_DIR" $argv
 end
+
+export FZF_DEFAULT_OPTS="
+    --multi
+    --color=fg:#908caa,bg:#232136,hl:#ea9a97
+    --color=fg+:#e0def4,bg+:#393552,hl+:#ea9a97
+    --color=border:#44415a,header:#3e8fb0,gutter:#232136
+    --color=spinner:#f6c177,info:#9ccfd8,separator:#44415a
+    --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
 alias hx=$hx
 
