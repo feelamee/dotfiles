@@ -1,1 +1,2 @@
-/home/missed/.local/share/cargo/config.toml
+[build]
+jobs = 4
