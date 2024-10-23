@@ -77,3 +77,4 @@ alias hx=$hx
 zoxide init fish | source
 direnv hook fish | source
 set -g direnv_fish_mode disable_arrow
+jj util completion fish | source

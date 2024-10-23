@@ -1,3 +1,8 @@
 [user]
 name = "feelamee"
 email = "fosterlounch@gmail.com"
+
+[signing]
+sign-all = false
+backend = "ssh"
+key = "~/.ssh/id_ed25519.pub"

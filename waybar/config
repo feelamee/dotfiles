@@ -89,6 +89,7 @@
       "format-full": "ﮣ", 
       "format-icons": ["󱊡", "󱊢", "󱊣"]
     },
+
     "custom/weather": {
       "exec": "curl wttr.in/?format=1",
       "restart-interval": 600,

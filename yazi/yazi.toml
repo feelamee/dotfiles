@@ -3,7 +3,7 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager]
-ratio          = [ 1, 4, 3 ]
+ratio          = [ 1, 1, 2 ]
 sort_by        = "alphabetical"
 sort_sensitive = false
 sort_reverse   = false
@@ -13,9 +13,9 @@ show_hidden    = false
 show_symlink   = true
 
 [preview]
-tab_size        = 2
-max_width       = 600
-max_height      = 900
+tab_size        = 4
+max_width       = 1920
+max_height      = 1080
 cache_dir       = ""
 image_filter    = "triangle"
 image_quality   = 75
