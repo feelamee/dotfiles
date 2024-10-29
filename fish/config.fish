@@ -78,3 +78,4 @@ zoxide init fish | source
 direnv hook fish | source
 set -g direnv_fish_mode disable_arrow
 jj util completion fish | source
+git lfs completion fish | source
