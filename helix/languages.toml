@@ -113,7 +113,7 @@ args = [ "--header-insertion=never", "--clang-tidy" ]
 name = "cpp"
 scope = "source.cpp"
 injection-regex = "cpp"
-file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", ".hpp.in", ".h.in"]
+file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", ".hpp.in", ".h.in", ".hxx.in"]
 roots = []
 comment-token = "//"
 indent = { tab-width = 4, unit = "    " }
