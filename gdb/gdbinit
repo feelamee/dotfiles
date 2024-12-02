@@ -19,3 +19,15 @@ add-auto-load-safe-path ~/work/projects/branches/develop/mgraph/xeoma/bin/linux6
 alias rwo = run &>/dev/null
 
 set print static-members off
+
+define hookpost-break
+    disable $bpnum.2
+end
+
+set history save on
+set history size 10000
+set history filename ~/.local/state/gdb/history
+
+set print pretty on
+
+set case-sensitive auto

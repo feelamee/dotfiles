@@ -53,3 +53,5 @@ blender/
 
 heroic/*
 !heroic/config.json
+go/telemetry/
+asciinema/install-id

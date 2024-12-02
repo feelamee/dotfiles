@@ -7,22 +7,36 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
   "project_panel": {
     "dock": "left"
   },
   "features": {
-    "inline_completion_provider": "supermaven"
+    "inline_completion_provider": "none"
   },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
+  "base_keymap": "Atom",
   "vim_mode": true,
   "ui_font_size": 22,
   "buffer_font_size": 22,
   "theme": {
     "mode": "system",
-    "light": "Solarized Dark",
-    "dark": "One Dark"
+    "light": "Rosé Pine Moon",
+    "dark": "Rosé Pine Moon"
+  },
+  "format_on_save": "on",
+  "relative_line_numbers": true,
+  "search": {
+    "include_ignored": false,
+    "regex": true
   }
 }

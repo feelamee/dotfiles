@@ -2,24 +2,34 @@
 	email = fosterlounch@gmail.com
 	name = feelamee
 	signingkey = DAA711F70F7A1405
+
 [core]
 	editor = helix
+
 [init]
 	defaultBranch = master
-[diff]
-    external = difft
+
+# [diff]
+#     external = difft --display inline
+
 [log]
 	date = format:%D %I:%M %p
+
 [pretty]
 	useful = %<(7 trunc)%Cblue%h %<|(80 trunc)%C(3)%s %>|(-29 ltruct)%Cgreen%an %>|(-9 ltrunc)%Creset%ad
+
 [alias]
 	logg = log --format=short --graph
+
 [alias]
 	logp = log --format=useful
+
 [status]
 	short = true
+
 [commit]
 	gpgSign = false
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

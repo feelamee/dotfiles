@@ -91,7 +91,7 @@
     },
 
     "custom/weather": {
-      "exec": "curl wttr.in/?format=1",
+      "exec": "true || curl wttr.in/?format=1",
       "restart-interval": 600,
       "return-type": "text",
       "tooltip" : false,

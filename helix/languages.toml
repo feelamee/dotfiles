@@ -47,7 +47,8 @@ file-types = [
   ".yash_profile",
   ".hushlogin",
   "bashrc_Apple_Terminal",
-  "zshrc_Apple_Terminal"
+  "zshrc_Apple_Terminal",
+  ".envrc"
 ]
 shebangs = ["sh", "bash", "dash", "zsh"]
 roots = []
@@ -241,3 +242,15 @@ indent = { tab-width = 4, unit = "    " }
 name = "python"
 source = { git = "https://github.com/tree-sitter/tree-sitter-python", rev = "4bfdd9033a2225cc95032ce77066b7aeca9e2efc" }
 
+#####################################################
+#                                                   #
+#                        rust                       #
+#                                                   #
+#####################################################
+
+[language-server.rust-analyzer]
+command = "rustup"
+args = ["run", "stable", "rust-analyzer"]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
