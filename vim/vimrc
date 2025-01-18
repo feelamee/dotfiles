@@ -197,7 +197,17 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+""""""""""""""""""""""""""""""
+" => Map redo to 'U'
+""""""""""""""""""""""""""""""
+vnoremap <silent> U <C-r>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => create undo bookmark when using Ctrl-W, Ctrl-U in insert mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+ 
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
@@ -205,7 +215,6 @@ set wrap "Wrap lines
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
@@ -382,3 +391,4 @@ hi TabLine ctermfg=189 ctermbg=NONE
 hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
 hi TabLineSel ctermfg=81 ctermbg=NONE cterm=underline
 hi StatusLine ctermfg=81 ctermbg=NONE 
+

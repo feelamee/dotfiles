@@ -4,8 +4,10 @@ else
     set hx hx
 end
 
-export EDITOR="$hx"
-export VISUAL="$hx"
+alias hx=$hx
+
+export EDITOR="vim"
+export VISUAL="vim"
 export PAGER="bat --style=plain"
 
 alias ya=yazi
@@ -76,7 +78,7 @@ export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
 export GOPATH="$XDG_DATA_HOME"/go
 
-alias hx=$hx
+export STEAM_FORCE_DESKTOPUI_SCALING=1.5
 
 zoxide init fish | source
 direnv hook fish | source
