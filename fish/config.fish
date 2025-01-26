@@ -1,16 +1,22 @@
-if command -v helix &>/dev/null
-    set hx helix
-else
-    set hx hx
+if command -q helix
+    alias hx=helix
 end
 
-alias hx=$hx
+if command -q vim
+    export EDITOR="vim"
+    export VISUAL="vim"
+end
 
-export EDITOR="vim"
-export VISUAL="vim"
-export PAGER="bat --style=plain"
+if command -q bat
+    export PAGER="bat --style=plain"
+else
+    export PAGER="less --RAW-CONTROL-CHARS"
+end
 
-alias ya=yazi
+
+if command -q yazi
+    alias ya=yazi
+end
 
 export XDG_CONFIG_HOME="$(xdg-user-dir CONFIG)"
 export XDG_DATA_HOME="$(xdg-user-dir DATA)"
@@ -33,9 +39,12 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 
 export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
-function adb
-    set HOME "$ANDROID_USER_HOME"
-    command adb $argv
+
+if command -q adb
+    function adb
+        set HOME "$ANDROID_USER_HOME"
+        command adb $argv
+    end
 end
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
@@ -60,8 +69,10 @@ export VCACHE="$XDG_CACHE_HOME/vlang"
 
 export SVN_CONFIG_DIR="$XDG_CONFIG_HOME/subversion"
 
-function svn
-    command svn --config-dir "$SVN_CONFIG_DIR" $argv
+if command -q svn
+    function svn
+        command svn --config-dir "$SVN_CONFIG_DIR" $argv
+    end
 end
 
 export FZF_DEFAULT_OPTS="
@@ -80,8 +91,19 @@ export GOPATH="$XDG_DATA_HOME"/go
 
 export STEAM_FORCE_DESKTOPUI_SCALING=1.5
 
-zoxide init fish | source
-direnv hook fish | source
-set -g direnv_fish_mode disable_arrow
-jj util completion fish | source
-git lfs completion fish | source
+if command -q zoxide
+    zoxide init fish | source
+end
+
+if command -q direnv
+    direnv hook fish | source
+    set -g direnv_fish_mode disable_arrow
+end
+
+if command -q jj
+    jj util completion fish | source
+end
+
+if command -q git-lfs
+    git lfs completion fish | source
+end
