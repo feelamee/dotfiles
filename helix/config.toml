@@ -7,10 +7,14 @@ auto-format = true
 default-line-ending = "lf"
 insert-final-newline = true
 end-of-line-diagnostics = "hint"
+bufferline = "always"
+color-modes = true
+popup-border = "all"
+rulers = [80]
+scrolloff = 7
 
 [editor.inline-diagnostics]
-cursor-line = "error"
-
+cursor-line = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -31,7 +35,7 @@ newline = "all"
 [editor.whitespace.characters]
 space = "·"
 tab = "→"
-newline = "⇽"
+newline = "⏎" # "⇽"
 tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
 [editor.lsp]
@@ -40,6 +44,8 @@ display-inlay-hints = false
 display-signature-help-docs = true
 snippets = true
 
-[keys.insert]
-"esc" = [":run-shell-command hyprctl switchxkblayout at-translated-set-2-keyboard 0 &>/dev/null", "normal_mode"]
+[editor.statusline]
+left = ["mode", "spinner", "file-modification-indicator", "file-name", "read-only-indicator"]
 
+[keys.insert]
+"esc" = [":run-shell-command switch-keyboard-layout-to us", "normal_mode"]

@@ -2,7 +2,10 @@ if command -q helix
     alias hx=helix
 end
 
-if command -q vim
+if command -q helix
+    export EDITOR="helix"
+    export VISUAL="helix"
+else if command -q vim
     export EDITOR="vim"
     export VISUAL="vim"
 end

@@ -1,4 +1,0 @@
-# Config example stolen from https://wiki.gentoo.org/wiki/Mutt
-#
-
-source "${XDG_CONFIG_HOME}"/mutt/mutt-colors-solarized-dark-256.muttrc

@@ -9,9 +9,6 @@
 [init]
 	defaultBranch = master
 
-# [diff]
-#     external = difft --display inline
-
 [log]
 	date = format:%D %I:%M %p
 
@@ -23,6 +20,7 @@
 
 [alias]
 	logp = log --format=useful
+	st = status
 
 [status]
 	short = true

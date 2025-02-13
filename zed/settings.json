@@ -9,8 +9,8 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "ollama",
-      "model": "llama3.2:latest"
+      "provider": "deepseek",
+      "model": "deepseek-chat"
     },
     "version": "2"
   },

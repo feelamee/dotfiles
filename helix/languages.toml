@@ -79,9 +79,9 @@ formatter = { command = "clang-format", args = ["--style=file"] }
 auto-format = true
 
 [language.debugger]
-name = "lldb-vscode"
+name = "lldb-dap"
 transport = "stdio"
-command = "lldb-vscode"
+command = "lldb-dap"
 
 [[language.debugger.templates]]
 name = "binary"
@@ -120,6 +120,9 @@ comment-token = "//"
 indent = { tab-width = 4, unit = "    " }
 formatter = { command = "clang-format", args = ["--style=file"] }
 auto-format = true
+
+[language.auto-pairs]
+"<" = ">"
 
 [language.debugger]
 name = "lldb-vscode"
