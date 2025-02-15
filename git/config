@@ -21,6 +21,7 @@
 [alias]
 	logp = log --format=useful
 	st = status
+	lol = log --oneline
 
 [status]
 	short = true
