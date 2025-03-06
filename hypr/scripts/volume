@@ -1,36 +1,94 @@
-#!/bin/sh
+#!/bin/bash
 
-down() {
-	pamixer -u
-	pamixer -d 2
-	volume=$(pamixer --get-volume)
-	[$volume -gt 0 ] && volume=`expr $volume`  
-	dunstify -t 1000 -a "VOLUME" "Decreasing to $volume%" -h int:value:"$volume" -i ~/.config/dunst/assets/ui/volume_low.png -r 2593 -u normal
-	canberra-gtk-play -i audio-volume-change -d "changevolume"
+set -euo pipefail
+
+notify() {
+    local asset=""
+    local volume=""
+    while test $# -ne 0
+    do
+        case "$1" in
+            -t|--text)
+                shift
+                local text="$1"
+                ;;
+
+            -a|--asset)
+                shift
+                local dir="$HOME/.config/dunst/assets/ui/"
+                asset=$(find "$dir" -name "$1*")
+                [[ -f "$asset" ]] || return 2;
+                ;;
+            -v|--volume)
+                shift
+                volume="$1"
+                ;;
+        esac
+        shift
+    done
+
+    [[ -z "${text}" ]] && return 3
+    hint_opt=${volume:+"-h int:value:$volume"}
+    image_opt=${asset:+"-i $asset"}
+
+    dunstify -t 1000 \
+             -a "VOLUME" "$text" \
+             ${hint_opt} \
+             ${image_opt} \
+             -u normal
 }
 
-up() {
-	pamixer -u
-	pamixer -i 2
-	volume=$(pamixer --get-volume)
-	[ $volume -lt 1000 ] && volume=`expr $volume`  
-	dunstify -t 1000 -a "VOLUME" "Increasing to $volume%" -h int:value:"$volume" -i ~/.config/dunst/assets/ui/volume_high.png -r 2593 -u normal
-	canberra-gtk-play -i audio-volume-change -d "changevolume"
+play_sound() {
+    canberra-gtk-play -i audio-volume-change -d "changevolume"
 }
 
 mute() {
-muted="$(pamixer --get-mute)"
-if $muted; then
-  pamixer -u
-  dunstify -t 1000 -a "VOLUME" "UNMUTED" -i ~/.config/dunst/assets/ui/volume_high.svg -r 2593 -u normal
-else 
-  pamixer -m
-  dunstify -t 1000 -a "VOLUME" "MUTED" -i ~/.config/dunst/assets/ui/volume_muted.svg -r 2593 -u normal
-fi
+    pamixer -m
+}
+
+unmute() {
+    pamixer -u
+}
+
+volume() {
+    pamixer --get-volume
+}
+
+down() {
+    unmute
+    pamixer -d 2
+
+    local v
+    v=$(volume)
+
+    # notify -t "Decreasing to $v%" -v "$v" -a volume_low
+    play_sound
+}
+
+up() {
+    unmute
+    pamixer -i 2
+
+    local v
+    v=$(volume)
+
+    # notify -t "Increasing to $v%" -v "$v" -a volume_high
+    play_sound
+}
+
+toggle_mute() {
+    if "$(pamixer --get-mute)";
+    then
+        unmute
+        notify -t MUTED -a volume_muted
+    else 
+        mute
+        notify -t UNMUTED -a volume_high
+    fi
 }
 
 case "$1" in
   up) up;;
   down) down;;
-  mute) mute;;
+  toggle) toggle_mute;;
 esac

@@ -22,6 +22,7 @@
 	logp = log --format=useful
 	st = status
 	lol = log --oneline
+	ds = diff --staged
 
 [status]
 	short = true

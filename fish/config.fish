@@ -16,7 +16,6 @@ else
     export PAGER="less --RAW-CONTROL-CHARS"
 end
 
-
 if command -q yazi
     alias ya=yazi
 end
@@ -93,6 +92,8 @@ export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 export GOPATH="$XDG_DATA_HOME"/go
 
 export STEAM_FORCE_DESKTOPUI_SCALING=1.5
+
+export CPM_SOURCE_CACHE="$XDG_CACHE_HOME/CPM"
 
 if command -q zoxide
     zoxide init fish | source
