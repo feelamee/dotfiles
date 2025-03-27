@@ -35,7 +35,8 @@ notify() {
              -a "VOLUME" "$text" \
              ${hint_opt} \
              ${image_opt} \
-             -u normal
+             -u normal \
+             -r 42
 }
 
 play_sound() {
@@ -61,7 +62,7 @@ down() {
     local v
     v=$(volume)
 
-    # notify -t "Decreasing to $v%" -v "$v" -a volume_low
+    notify -t "Decreasing to $v%" -v "$v" -a volume_low
     play_sound
 }
 
@@ -72,7 +73,7 @@ up() {
     local v
     v=$(volume)
 
-    # notify -t "Increasing to $v%" -v "$v" -a volume_high
+    notify -t "Increasing to $v%" -v "$v" -a volume_high
     play_sound
 }
 
@@ -80,10 +81,10 @@ toggle_mute() {
     if "$(pamixer --get-mute)";
     then
         unmute
-        notify -t MUTED -a volume_muted
+        notify -t UNMUTED -a volume_high
     else 
         mute
-        notify -t UNMUTED -a volume_high
+        notify -t MUTED -a volume_muted
     fi
 }
 

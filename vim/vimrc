@@ -57,6 +57,8 @@ let &t_EI = "\e[2 q"    "normal
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set scrolloff=7
+set sidescroll=1
+set sidescrolloff=4
 
 " Turn on the Wild menu
 set wildmenu
@@ -142,8 +144,8 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 " Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<c-u>call visualselection('', '')<cr>/<c-r>=@/<cr><cr>
-vnoremap <silent> # :<c-u>call visualselection('', '')<cr>?<c-r>=@/<cr><cr>
+vnoremap <silent> * :<c-u>call VisualSelection('', '')<cr>/<c-r>=@/<cr><cr>
+vnoremap <silent> # :<c-u>call VisualSelection('', '')<cr>?<c-r>=@/<cr><cr>
 
 nmap <c-j> <cmd>call smoothie#do("3\<c-e>") <cr>
 vmap <C-j> <cmd>call smoothie#do("3\<C-e>") <CR>
@@ -164,9 +166,10 @@ set statusline=\ %m%r%h%w\ %f\ in\ %{getcwd()}\ %=\ %l:%c
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-let data_dir=$XDG_DATA_HOME . "/vim"
-if empty(glob(data_dir . '/autoload/plug.vim'))
-    silent execute '!curl -fLo ' . data_dir . '/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let vim_plug_file=$XDG_DATA_HOME . "/vim/autoload/plug.vim" 
+let vim_plug_url="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+if empty(glob(vim_plug_file))
+    silent execute '!curl --create-dirs -fLo ' . vim_plug_file . " " . vim_plug_url
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -174,7 +177,7 @@ call plug#begin()
 
 Plug 'rose-pine/vim'
 Plug 'psliwka/vim-smoothie'
-
+    
 call plug#end()
 
 let g:disable_bg = 1
@@ -188,4 +191,3 @@ hi TabLine ctermfg=189 ctermbg=NONE
 hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
 hi TabLineSel ctermfg=81 ctermbg=NONE
 hi StatusLine ctermfg=81 ctermbg=NONE 
-

@@ -43,8 +43,8 @@ extract = [
 	{ run = 'unar "%1"', desc = "Extract here", for = "windows" },
 ]
 play = [
-	{ run = 'vlc "$@"', orphan = true, for = "unix" },
-	{ run = 'vlc "%1"', orphan = true, for = "windows" },
+	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+	{ run = 'mpv "%1"', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
 
@@ -120,8 +120,8 @@ previewers = [
 	{ mime = "application/x-rar",           run = "archive" },
 	{ mime = "application/xz",              run = "archive" },
 
-  { mime = "text/markdown", run = "glow" },
-  { name = "*.md",          run = "glow" },
+	{ mime = "text/markdown", run = "glow" },
+	{ name = "*.md",          run = "glow" },
 
 	# Fallback
 	{ name = "*", run = "file" },

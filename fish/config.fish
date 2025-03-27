@@ -2,9 +2,13 @@ if command -q helix
     alias hx=helix
 end
 
-if command -q helix
-    export EDITOR="helix"
-    export VISUAL="helix"
+# if command -q helix
+#    export EDITOR="helix"
+#    export VISUAL="helix"
+# else
+if command -q nvim
+   export EDITOR="nvim"
+   export VISUAL="nvim"
 else if command -q vim
     export EDITOR="vim"
     export VISUAL="vim"
@@ -34,7 +38,9 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
-export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
+if not command -q nvim
+    export VIMINIT="source $XDG_CONFIG_HOME/vim/vimrc"
+end
 
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 

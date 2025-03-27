@@ -1,3 +1,6 @@
 [submodule "yazi/plugins/glow.yazi"]
 	path = yazi/plugins/glow.yazi
 	url = https://github.com/Reledia/glow.yazi.git
+[submodule "yazi/plugins/wl-clipboard"]
+	path = yazi/plugins/wl-clipboard.yazi
+	url = https://github.com/grappas/wl-clipboard.yazi
