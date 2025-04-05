@@ -47,7 +47,7 @@ keymap = [
 	{ on = [ "<Right>" ], run = "enter", desc = "Enter the child directory" },
 
 	{ on = [ "g", "g" ], run = "arrow top", desc = "Move cursor to the top" },
-	{ on = [ "G" ], run = "arrow bottom", desc = "Move cursor to the bottom" },
+	{ on = [ "G" ], run = "arrow bot", desc = "Move cursor to the bottom" },
 
 	# Selection
 	{ on = [ "<Space>" ], run = [ "toggle --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
@@ -153,7 +153,8 @@ prepend_keymap = [
 	{ on = "<C-s>", run = 'shell "$SHELL" --block --confirm', desc = "Open shell here" },
 
 	{ on = "<C-c>", run = ["plugin wl-clipboard"], desc = "Copy file to clipboard" },
-	{ on = "<C-y>", run = ["plugin test -- foo --bar --baz=qux"] },
+
+	{ on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 ]
 
 [tasks]

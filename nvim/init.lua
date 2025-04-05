@@ -69,6 +69,14 @@ vim.o.number = true
 
 vim.o.mouse = ""
 
+-- Restore cursor position
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+    pattern = { "*" },
+    callback = function()
+        vim.api.nvim_exec('silent! normal! g`"zv', false)
+    end,
+})
+
 -- mini.deps setup
 
 local path_package = vim.fn.stdpath('data') .. '/site/'
@@ -124,7 +132,9 @@ later(function()
 end)
 
 later(function()
-	require('mini.pairs').setup()
+	local MiniPairs = require('mini.pairs')
+	MiniPairs.setup()
+	vim.keymap.set('i', '`', '`')
 end)
 
 later(function()
@@ -140,7 +150,7 @@ later(function()
 
 	vim.keymap.set(
 		'n',
-		'<leader>f',
+		'<leader>o',
 		MiniFiles.open,
 		{ desc = 'Open files picker' }
 	)
@@ -170,12 +180,38 @@ later(function()
 		mappings = {
 			caret_left  = '<C-b>',
 			caret_right = '<C-f>',
+
+			choose_in_tabpage = '',
+
+			mark_and_go_down = {
+				char = '<Tab>',
+				func = function(a)
+					a.mark()
+					a.move_down()
+				end,
+			},
+
+			mark_and_go_up = {
+				char = '<S-Tab>',
+				func = function(a)
+					a.mark()
+					a.move_up()
+				end,
+			},
+
+			delete_left = '',
+
+			scroll_down = '<C-d>',
+			scroll_up = '<C-u>',
+
+			toggle_preview = '<C-t>',
+			toggle_info    = '<C-/>',
 		},
 	})
 
 	vim.keymap.set(
 		'n',
-		'<leader>F',
+		'<leader>f',
 		MiniPick.builtin.files,
 		{ desc = 'Open files picker' }
 	)
@@ -184,7 +220,7 @@ end)
 now(function()
 	add({
 		source = 'rose-pine/neovim',
-		checkout = 'master',
+		checkout = 'main',
 	})
 
 	require('rose-pine').setup({
@@ -211,7 +247,8 @@ later(function()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"c", "cpp", "lua", "vim", "vimdoc", "query", "markdown",
-			"markdown_inline", "kdl", "toml", "json", "yaml", "hyprlang"
+			"markdown_inline", "kdl", "toml", "json", "yaml", "hyprlang",
+			"css", "jsonc",
 		},
 
 		highlight = {

@@ -57,3 +57,6 @@ asciinema/install-id
 btop/btop.log
 
 chromium/
+
+transmission/*
+!transmission/settings.json

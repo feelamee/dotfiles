@@ -5,7 +5,17 @@
     "margin-top": 8,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["hyprland/language", "custom/weather", "cpu", "memory", "network", "pulseaudio",  "backlight", "battery"],
+    "modules-right": [
+    	"hyprland/language",
+    	"custom/weather",
+    	"cpu",
+    	"memory",
+    	"network",
+    	"pulseaudio",
+    	"backlight",
+    	"battery"
+    ],
+
     "hyprland/workspaces": {
       "format": "{icon}",
       "on-click": "activate",
@@ -57,7 +67,6 @@
         "format-ethernet": "",
         "format-disconnected": "睊",
         "tooltip-format": "{essid}",
-        "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
     },
 
