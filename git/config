@@ -4,7 +4,7 @@
 	signingkey = DAA711F70F7A1405
 
 [core]
-	editor = helix
+	editor = nvim
 
 [init]
 	defaultBranch = master
@@ -29,6 +29,7 @@
 
 [commit]
 	gpgSign = false
+	verbose = true
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f

@@ -176,6 +176,15 @@ later(function()
 end)
 
 later(function()
+
+	local input_actions = function(actions)
+	  return function()
+		local mappings = MiniPick.get_picker_opts().mappings
+		local keys = vim.tbl_map(function(a) return mappings[a] end, actions)
+		vim.api.nvim_input(vim.keycode(table.concat(keys)))
+	  end
+	end
+
 	require('mini.pick').setup({
 		mappings = {
 			caret_left  = '<C-b>',
@@ -183,20 +192,13 @@ later(function()
 
 			choose_in_tabpage = '',
 
-			mark_and_go_down = {
+			mark_and_down = {
 				char = '<Tab>',
-				func = function(a)
-					a.mark()
-					a.move_down()
-				end,
+				func = input_actions({ 'mark', 'move_down' })
 			},
-
-			mark_and_go_up = {
+			mark_and_up = {
 				char = '<S-Tab>',
-				func = function(a)
-					a.mark()
-					a.move_up()
-				end,
+				func = input_actions({ 'mark', 'move_up' })
 			},
 
 			delete_left = '',
