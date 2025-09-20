@@ -1,0 +1,31 @@
+{
+  "sidebar_selection": {
+    "FeedList": [
+      {
+        "Feed": {
+          "feed_id": "https://tazj.in/feed.atom",
+          "category_id": "NewsFlash.Toplevel",
+          "sort_index": 15
+        }
+      },
+      "tazjin's interblag",
+      7
+    ]
+  },
+  "article_list_mode": "All",
+  "search_term": "",
+  "prefer_scraped_content": false,
+  "selected_article": null,
+  "window_size": [
+    1200,
+    650
+  ],
+  "maximized": true,
+  "article_view_visible": false,
+  "sidebar_visible": true,
+  "article_view_zoom": 1.5,
+  "subscriptions_expanded": true,
+  "tags_expanded": true,
+  "expanded_categories": [],
+  "volume": 1.0
+}

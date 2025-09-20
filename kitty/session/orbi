@@ -1,0 +1,9 @@
+launch hyprctl dispatch movetoworkspacesilent 3
+
+new_tab orbi
+cd ~/code/orbi
+launch nvim
+
+new_tab build
+cd ~/code/orbi
+

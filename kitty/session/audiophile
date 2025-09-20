@@ -1,0 +1,18 @@
+launch hyprctl dispatch movetoworkspacesilent 3
+
+new_tab nvim
+cd ~/media/audio
+launch nvim .dump/process .dump/dump/batch
+
+new_tab process
+cd ~/media/audio
+launch fish
+
+new_tab ya
+cd ~/media/audio
+launch yazi . .dump/tmp
+
+new_tab log
+cd ~/media/audio
+launch tail -f .dump/dump/process.log
+

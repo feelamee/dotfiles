@@ -1,6 +1,2 @@
 {
-	"auths": {
-		"https://index.docker.io/v1/": {}
-	},
-	"credsStore": "pass"
 }

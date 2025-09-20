@@ -1,7 +1,0 @@
-{
-    "workbench.colorTheme": "Rosé Pine",
-    "keyboard.dispatch": "keyCode",
-    "explorer.confirmDelete": false,
-    "terminal.explorerKind": "external",
-    "terminal.external.linuxExec": "kitty"
-}

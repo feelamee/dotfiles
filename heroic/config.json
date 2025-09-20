@@ -1,5 +1,6 @@
 {
   "defaultSettings": {
+    "analyticsOptIn": false,
     "checkUpdatesInterval": 10,
     "enableUpdates": false,
     "addDesktopShortcuts": false,
@@ -14,7 +15,7 @@
     "customWinePaths": [],
     "defaultInstallPath": "/home/missed/media/game/heroic",
     "libraryTopSection": "recently_played",
-    "defaultSteamPath": "/home/missed/.steam/steam",
+    "defaultSteamPath": "/home/missed/.local/share/Steam",
     "defaultWinePrefix": "/home/missed/.local/share/wine-prefix",
     "hideChangelogsOnStartup": false,
     "language": "en",
@@ -29,18 +30,27 @@
     "winePrefix": "/home/missed/Games/Heroic/Prefixes/default",
     "wineVersion": {
       "bin": "/usr/bin/wine",
-      "name": "Wine Default - wine-9.16",
+      "name": "Wine Default - wine-10.15",
       "type": "wine",
       "wineserver": "/usr/bin/wineserver"
     },
     "enableEsync": true,
     "enableFsync": true,
     "enableMsync": false,
+    "enableWineWayland": false,
+    "enableHDR": false,
+    "enableWoW64": false,
     "eacRuntime": true,
     "battlEyeRuntime": true,
     "framelessWindow": false,
     "beforeLaunchScriptPath": "",
-    "afterLaunchScriptPath": ""
+    "afterLaunchScriptPath": "",
+    "disableUMU": false,
+    "verboseLogs": true,
+    "downloadProtonToSteam": false,
+    "advertiseAvxForRosetta": false,
+    "noTrayIcon": false,
+    "showValveProton": false
   },
   "version": "v0"
 }

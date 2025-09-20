@@ -6,8 +6,17 @@ image/png,image/jpg=sxiv.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/roblox-studio=org.vinegarhq.Vinegar.studio.desktop
+x-scheme-handler/roblox-studio-auth=org.vinegarhq.Vinegar.studio.desktop
+application/x-roblox-rbxl=org.vinegarhq.Vinegar.studio.desktop
+application/x-roblox-rbxlx=org.vinegarhq.Vinegar.studio.desktop
+text/html=librewolf.desktop
+x-scheme-handler/http=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/about=librewolf.desktop
+x-scheme-handler/unknown=librewolf.desktop
 
 [Added Associations]
 x-scheme-handler/tg=org.telegram.desktop.desktop;
-text/plain=helix.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+

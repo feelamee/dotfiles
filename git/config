@@ -23,6 +23,10 @@
 	st = status
 	ds = diff --staged
 	lod = lol -n10
+	co = checkout
+	ca = commit --amend
+	dne = diff --no-ext-diff
+	dse = diff --staged --no-ext-diff
 
 [status]
 	short = true

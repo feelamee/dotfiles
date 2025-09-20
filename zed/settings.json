@@ -7,12 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "assistant": {
+  "agent": {
+    "default_profile": "write",
+    "play_sound_when_agent_done": true,
     "default_model": {
       "provider": "deepseek",
       "model": "deepseek-chat"
-    },
-    "version": "2"
+    }
   },
   "project_panel": {
     "dock": "left"
@@ -33,7 +34,7 @@
     "light": "Rosé Pine Moon",
     "dark": "Rosé Pine Moon"
   },
-  "format_on_save": "on",
+  "format_on_save": "off",
   "relative_line_numbers": true,
   "search": {
     "include_ignored": false,

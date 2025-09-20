@@ -13,7 +13,8 @@
     	"network",
     	"pulseaudio",
     	"backlight",
-    	"battery"
+    	"battery",
+		"tray",
     ],
 
     "hyprland/workspaces": {
@@ -105,4 +106,8 @@
       "return-type": "text",
       "tooltip" : false,
     },   
+
+	"tray": {
+	  "show-passive-items": true,
+	}
 }

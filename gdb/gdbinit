@@ -7,20 +7,25 @@ define hook-step
 end
 
 define hookpost-next
-    refresh
+	refresh
 end
 
 define hookpost-step
     refresh
 end
 
+if !$_isvoid($_any_caller_matches)
+    define hook-stop
+        while $_thread && $_any_caller_matches("^__")
+            up-silently
+        end
+    end
+end
+
 alias rwo = run &>/dev/null
+alias swo = start &>/dev/null
 
 set print static-members off
-
-# define hookpost-break
-#    disable $bpnum.2
-# end
 
 set history save on
 set history size 10000
@@ -30,4 +35,7 @@ set print pretty on
 
 set case-sensitive auto
 
-add-auto-load-safe-path /home/missed/code/jc/.gdbinit
+set debuginfod enabled off
+
+skip -rfu '^std::.*'
+

@@ -1,12 +1,43 @@
 -- vim options
 
-vim.g.mapleader = ','
+-- vim.o.exrc = true
+
+vim.g.mapleader = ' '
+
+vim.o.winborder = 'rounded'
+
+vim.o.signcolumn = 'yes'
+
+-- local function get_buffers(options)
+--     local buffers = {}
+
+--     for buffer = 1, vim.fn.bufnr('$') do
+--         local is_listed = vim.fn.buflisted(buffer) == 1
+--         if options.listed and is_listed then
+--             table.insert(buffers, buffer)
+--         else
+--             table.insert(buffers, buffer)
+--         end
+--     end
+
+--     return buffers
+-- end
 
 vim.keymap.set(
 	'n',
-	'<leader>R',
-	'<cmd>source $MYVIMRC<cr>',
+	'<leader><leader>r',
+	function()
+		vim.cmd('mapclear')
+		vim.cmd('source $MYVIMRC')
+	end,
 	{ desc = 'Reload neovim config' }
+)
+
+vim.keymap.set(
+	'n',
+	'<leader><leader>c',
+	'<cmd>edit $MYVIMRC<cr>',
+	{ desc = 'Edit neovim config' }
 )
 
 vim.keymap.set(
@@ -26,15 +57,15 @@ vim.keymap.set(
 vim.keymap.set(
 	{ 'n', 'v' },
 	'<leader>y',
-	'"*y',
-	{ desc = 'yank to system clipboard' }
+	'"+y',
+	{ desc = 'Yank to system clipboard' }
 )
 
 vim.keymap.set(
 	{ 'n', 'v' },
 	'<leader>p',
-	'"*p',
-	{ desc = 'paste from system clipboard' }
+	'"+p',
+	{ desc = 'Paste from system clipboard' }
 )
 
 vim.keymap.set(
@@ -48,7 +79,35 @@ vim.keymap.set(
 	{ 'n', 'v' },
 	'<leader>q',
 	'<cmd>bd<cr>',
-	{ desc = 'Close all buffers but active' }
+	{ desc = 'Close buffer' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<leader>Q',
+	'<cmd>bd!<cr>',
+	{ desc = 'Force close buffer (even if there are unsaved changes)' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<leader>b',
+	'<cmd>:make<cr>',
+	{ desc = 'run build' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<C-y>',
+	'<C-y>k',
+	{ desc = 'scroll up' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<C-e>',
+	'<C-e>j',
+	{ desc = 'scroll down' }
 )
 
 vim.o.ignorecase = true
@@ -64,7 +123,7 @@ vim.o.sidescrolloff = 4
 
 vim.o.undofile = true
 
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 vim.o.number = true
 
 vim.o.mouse = ""
@@ -94,9 +153,77 @@ end
 
 require('mini.deps').setup()
 
+-- :W doas saves the file
+-- (useful for handling the permission-denied error)
+-- command! W execute 'w !doas tee % > /dev/null' <bar> edit!
+-- vim.api.nvim_create_user_command('W', "execute 'w !doas tee % > /dev/null' <bar> edit!", {})
+
 -- plugins setup
 
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+
+
+later(function()
+	add({
+		source = 'neovim/nvim-lspconfig',
+		depends = { 'williamboman/mason.nvim' },
+	})
+
+	require('mason').setup({})
+
+	-- vim.opt.completeopt = { "menuone", "noselect", "popup" }
+	require('lspconfig').clangd.setup({
+		filetypes = { 'c', 'cpp' },
+
+		-- on_attach = function(client, bufnr)
+		-- 	vim.lsp.completion.enable(true, client.id, bufnr, {
+		-- 		autotrigger = true,
+		-- 		convert = function(item)
+		-- 			return { abbr = item.label:gsub("%b()", "") }
+		-- 		end,
+		-- 	})
+		-- 	vim.keymap.set("i", "<C-n>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
+		-- end
+	})
+
+
+	require('lspconfig').cmake.setup({})
+end)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<leader>d',
+	vim.lsp.buf.implementation,
+	{ desc = 'show all implementations of symbol' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<leader>s',
+	'<cmd>ClangdSwitchSourceHeader<cr>',
+	{ desc = 'switch source/header' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'gd',
+	vim.lsp.buf.definition,
+	{ desc = 'switch source/header' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<leader>r',
+	vim.lsp.buf.references,
+	{ desc = 'show all references of symbol' }
+)
+
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<leader>R',
+	vim.lsp.buf.rename,
+	{ desc = 'rename symbol' }
+)
 
 now(function()
 	require('mini.icons').setup()
@@ -116,6 +243,22 @@ later(function()
 	})
 end)
 
+now(function()
+	require('mini.move').setup({
+		mappings = {
+			left = '<C-h>',
+			right = '<C-l>',
+			down = '<C-j>',
+			up = '<C-k>',
+
+			line_left = '<C-h>',
+			line_right = '<C-l>',
+			line_down = '<C-j>',
+			line_up = '<C-k>',
+		},
+	})
+end)
+
 later(function()
 	require('mini.indentscope').setup({
 		delay = 0,
@@ -132,16 +275,6 @@ later(function()
 end)
 
 later(function()
-	local MiniPairs = require('mini.pairs')
-	MiniPairs.setup()
-	vim.keymap.set('i', '`', '`')
-end)
-
-later(function()
-	require('mini.splitjoin').setup()
-end)
-
-later(function()
 	require('mini.files').setup({
 		mappings = {
 			close = '<Esc>',
@@ -152,7 +285,7 @@ later(function()
 		'n',
 		'<leader>o',
 		MiniFiles.open,
-		{ desc = 'Open files picker' }
+		{ desc = 'Open mini.files' }
 	)
 end)
 
@@ -214,8 +347,22 @@ later(function()
 	vim.keymap.set(
 		'n',
 		'<leader>f',
-		MiniPick.builtin.files,
+		function()
+			local git_dir = vim.fn.finddir('.git', vim.fn.getcwd() .. ";")
+			if git_dir ~= "" then
+				MiniPick.builtin.files({ tool = "git" })
+			else
+				MiniPick.builtin.files()
+			end
+		end,
 		{ desc = 'Open files picker' }
+	)
+
+	vim.keymap.set(
+		'n',
+		'<leader>F',
+		MiniPick.builtin.resume,
+		{ desc = 'Open last picker' }
 	)
 end)
 
@@ -250,7 +397,7 @@ later(function()
 		ensure_installed = {
 			"c", "cpp", "lua", "vim", "vimdoc", "query", "markdown",
 			"markdown_inline", "kdl", "toml", "json", "yaml", "hyprlang",
-			"css", "jsonc",
+			"css", "jsonc", "kotlin", "groovy", "hlsl"
 		},
 
 		highlight = {

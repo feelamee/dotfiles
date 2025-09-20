@@ -60,3 +60,7 @@ chromium/
 
 transmission/*
 !transmission/settings.json
+
+zoom*
+assets/
+java/
