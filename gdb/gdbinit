@@ -1,17 +1,25 @@
 define hook-next
-    refresh
+    if $tui_enabled
+    	refresh
+    end
 end
 
 define hook-step
-    refresh
+    if $tui_enabled
+    	refresh
+    end
 end
 
 define hookpost-next
-	refresh
+    if $tui_enabled
+    	refresh
+    end
 end
 
 define hookpost-step
-    refresh
+    if $tui_enabled
+    	refresh
+    end
 end
 
 if !$_isvoid($_any_caller_matches)
@@ -24,7 +32,6 @@ end
 
 alias rwo = run &>/dev/null
 alias swo = start &>/dev/null
-
 set print static-members off
 
 set history save on
@@ -39,3 +46,26 @@ set debuginfod enabled off
 
 skip -rfu '^std::.*'
 
+catch throw
+
+python
+
+import gdb
+
+class TUIEventHandler:
+    def __init__(self):
+    	# Register our handler for the TUI enabled/disabled event
+    	gdb.events.tui_enabled.connect(self.on_tui_change)
+    	
+    def on_tui_change(self, *args, **kwargs):
+    	pass
+
+    def on_tui_enabled(self):
+    	gdb.set_convenience_variable("tui_enabled", true)
+    	
+    def on_tui_disabled(self):
+    	gdb.set_convenience_variable("tui_enabled", false)
+
+tui_handler = TUIEventHandler()
+
+end
