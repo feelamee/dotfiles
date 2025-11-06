@@ -27,6 +27,7 @@
 	ca = commit --amend
 	dne = diff --no-ext-diff
 	dse = diff --staged --no-ext-diff
+	c = commit
 
 [status]
 	short = true
@@ -42,3 +43,5 @@
 	required = true
 [http]
 	postBuffer = 524288000
+[lblame]
+	ignoreRevsFile = :(optional).git-blame-ignore-revs
