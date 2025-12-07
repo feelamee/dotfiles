@@ -31,3 +31,9 @@ vim.o.number = true
 vim.o.mouse = ""
 
 vim.opt.completeopt = { "menuone", "noselect", "popup", "fuzzy" }
+
+-- omg...
+vim.o.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+
+-- dont work :(
+-- vim.opt.cindent = false

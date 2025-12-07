@@ -30,6 +30,7 @@ set number relativenumber
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+set nocindent
 
 " Set to auto read when a file is changed from the outside
 set autoread

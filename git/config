@@ -28,6 +28,7 @@
 	dne = diff --no-ext-diff
 	dse = diff --staged --no-ext-diff
 	c = commit
+	ap = add -p
 
 [status]
 	short = true
