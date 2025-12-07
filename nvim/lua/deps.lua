@@ -58,21 +58,6 @@ later(function()
 end)
 
 later(function()
-	require('mini.files').setup({
-		mappings = {
-			close = '<Esc>',
-		}
-	})
-
-	vim.keymap.set(
-		'n',
-		'<leader>o',
-		MiniFiles.open,
-		{ desc = 'Open mini.files' }
-	)
-end)
-
-later(function()
 	require('mini.comment').setup({
 		options = {
 			-- Function to compute custom 'commentstring' (optional)
