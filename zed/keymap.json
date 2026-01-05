@@ -18,5 +18,11 @@
       "ctrl-[": ["terminal::SendKeystroke", "up"],
       "ctrl-]": ["terminal::SendKeystroke", "down"]
     }
-  }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-o": "editor::SwitchSourceHeader"
+    }
+  },
 ]

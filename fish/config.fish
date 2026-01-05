@@ -41,7 +41,7 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+# export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 

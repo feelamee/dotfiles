@@ -148,11 +148,6 @@ endfunction
 vnoremap <silent> * :<c-u>call VisualSelection('', '')<cr>/<c-r>=@/<cr><cr>
 vnoremap <silent> # :<c-u>call VisualSelection('', '')<cr>?<c-r>=@/<cr><cr>
 
-nmap <c-j> <cmd>call smoothie#do("3\<c-e>") <cr>
-vmap <C-j> <cmd>call smoothie#do("3\<C-e>") <CR>
-nmap <C-k> <cmd>call smoothie#do("3\<C-y>") <CR>
-vmap <C-k> <cmd>call smoothie#do("3\<C-y>") <CR>
-
 " Disable highlight search entries
 map <silent> <leader><leader> :noh<cr>
 
@@ -177,12 +172,10 @@ endif
 call plug#begin()
 
 Plug 'rose-pine/vim'
-Plug 'psliwka/vim-smoothie'
     
 call plug#end()
 
 let g:disable_bg = 1
-let g:smoothie_enabled = 1
 colorscheme rosepine_moon
 
 hi Search ctermfg=7 ctermbg=10

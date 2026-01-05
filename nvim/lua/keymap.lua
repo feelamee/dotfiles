@@ -105,3 +105,9 @@ vim.keymap.set(
 	{ desc = 'close quickfix and floating window, disable last search highlight' }
 )
 
+vim.keymap.set(
+	{ 'n' },
+	'-',
+	'<cmd>Explore<cr>',
+	{ desc = 'open Netrw' }
+)

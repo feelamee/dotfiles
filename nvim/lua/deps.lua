@@ -24,15 +24,15 @@ require('mini.deps').setup()
 
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-now(function()
+later(function()
 	require('mini.icons').setup()
 end)
 
-now(function()
+later(function()
 	require('mini.tabline').setup()
 end)
 
-now(function()
+later(function()
 	require('mini.statusline').setup()
 end)
 
@@ -106,6 +106,8 @@ later(function()
 		mappings = {
 			caret_left  = '<C-b>',
 			caret_right = '<C-f>',
+			caret_begin = '<C-a>',
+			caret_end = '<C-e>',
 
 			choose_in_tabpage = '',
 			-- choose_marked = '<CR>',
@@ -168,6 +170,13 @@ later(function()
 		MiniPick.builtin.grep_live,
 		{ desc = 'Open live grep picker' }
 	)
+
+	vim.keymap.set(
+		{ 'n', 'v' },
+		'<leader>?',
+		MiniPick.builtin.help,
+		{ desc = 'open Netrw' }
+	)
 end)
 
 now(function()
@@ -219,7 +228,7 @@ later(function()
 	})
 end)
 
-now(function()
+later(function()
 	add({
 		source = 'f-person/git-blame.nvim',
 		checkout = 'master',
@@ -233,4 +242,34 @@ now(function()
 		virtual_text_column = 50, 
 		message_when_not_committed = '',
 	})
+end)
+
+now(function()
+	add({
+		source = "SmiteshP/nvim-navic",
+		checkout = "master",
+	})
+
+	require('nvim-navic').setup({
+		highlight = true,
+	})
+
+end)
+
+later(function()
+	add({
+		source = "nvim-treesitter/nvim-treesitter-context",
+		checkout = "master",
+	})
+
+	require('treesitter-context').setup({
+		enable = false,
+	})
+end)
+
+later(function()
+	add('nvim-lua/plenary.nvim')
+	add('nvim-telescope/telescope.nvim')
+
+	require('telescope').setup({})
 end)

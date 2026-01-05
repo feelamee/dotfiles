@@ -1,25 +1,25 @@
 define hook-next
-    if $tui_enabled
+    # if $tui_enabled
     	refresh
-    end
+    # end
 end
 
 define hook-step
-    if $tui_enabled
+    # if $tui_enabled
     	refresh
-    end
+    # end
 end
 
 define hookpost-next
-    if $tui_enabled
+    # if $tui_enabled
     	refresh
-    end
+    # end
 end
 
 define hookpost-step
-    if $tui_enabled
+    # if $tui_enabled
     	refresh
-    end
+    # end
 end
 
 if !$_isvoid($_any_caller_matches)

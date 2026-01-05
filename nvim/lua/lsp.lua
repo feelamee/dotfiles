@@ -7,11 +7,18 @@ vim.lsp.config.clangd = {
 	},
 	root_markers = { '.clangd', 'compile_commands.json' },
 	filetypes = { 'c', 'cpp' },
+
+	on_attach = function(client, bufnr)
+		if client.server_capabilities.documentSymbolProvider then
+				require("nvim-navic").attach(client, bufnr)
+				vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+			end
+	end,
 }
 
 vim.keymap.set(
 	{ 'n', 'v' },
-	'<leader>d',
+	'<leader>i',
 	vim.lsp.buf.implementation,
 	{ desc = 'show all implementations of symbol' }
 )
@@ -45,7 +52,7 @@ vim.keymap.set(
 	{ 'n', 'v' },
 	'gd',
 	vim.lsp.buf.definition,
-	{ desc = 'switch source/header' }
+	{ desc = 'go to definition' }
 )
 
 vim.keymap.set(
@@ -71,4 +78,28 @@ vim.keymap.set(
 	{ desc = 'show all workspace symbols' }
 )
 
+vim.keymap.set(
+	{ 'n', 'v' },
+	'<leader>o',
+	function()
+		vim.lsp.buf.document_symbol({ loclist = false })
+	end,
+	{ desc = 'show all document symbols' }
+)
+
+vim.keymap.set(
+	{ 'n' },
+	"J",
+	vim.diagnostic.open_float,
+	{ desc = "Line diagnostics" }
+)
+
+vim.keymap.set(
+	{ 'n' },
+	"<leader>a",
+	vim.lsp.buf.code_action,
+	{ desc = "code actions" }
+)
+
 vim.lsp.enable({ 'clangd' })
+vim.lsp.enable({ 'luals' })

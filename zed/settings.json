@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "button": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "helix_mode": false,
   "agent": {
     "default_profile": "write",
     "play_sound_when_agent_done": true,
@@ -35,7 +42,7 @@
     "dark": "Rosé Pine Moon"
   },
   "format_on_save": "off",
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "search": {
     "include_ignored": false,
     "regex": true
