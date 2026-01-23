@@ -186,8 +186,8 @@ now(function()
 	})
 
 	require('rose-pine').setup({
-		variant = 'moon', -- auto, main, moon, or dawn
-		dark_variant = 'moon', -- main, moon, or dawn
+		variant = 'main', -- auto, main, moon, or dawn
+		dark_variant = 'main', -- main, moon, or dawn
 
 		styles = {
 			-- set true to make neovim fully transparent

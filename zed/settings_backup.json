@@ -1,0 +1,43 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "default_profile": "write",
+    "play_sound_when_agent_done": true,
+    "default_model": {
+      "provider": "deepseek",
+      "model": "deepseek-chat"
+    }
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "base_keymap": "Atom",
+  "vim_mode": true,
+  "ui_font_size": 22,
+  "buffer_font_size": 22,
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine Moon",
+    "dark": "Rosé Pine Moon"
+  },
+  "format_on_save": "off",
+  "relative_line_numbers": true,
+  "search": {
+    "include_ignored": false,
+    "regex": true
+  }
+}

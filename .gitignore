@@ -29,11 +29,6 @@ Code - OSS/User/*
 
 subversion/auth
 
-zed/*
-!zed/keymap.json
-!zed/settings.json
-!zed/themes/
-
 OpenRGB/
 
 qalculate/qalc.history
@@ -64,3 +59,6 @@ transmission/*
 zoom*
 assets/
 java/
+
+Code - OSS/
+JetBrains/

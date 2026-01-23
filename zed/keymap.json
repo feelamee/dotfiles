@@ -25,4 +25,10 @@
       "alt-o": "editor::SwitchSourceHeader"
     }
   },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-t": "project_symbols::Toggle"
+    }
+  }
 ]
