@@ -1,3 +1,27 @@
+""" TODO!
+" - how to :find in case-insentive manner
+"
+" - how to ignore some files/directories in :find Maybe a better way is to
+"   exclude files which should be ignored from working directory. E.g. do
+"   something like this:
+"   	project-workspace/
+"        |--- project/
+"        |--- build/
+"
+"   Although, some programs like clangd will put its files into .cache/ or
+"   elsewhere in project/.
+"
+"   NOTE! :find will ignore hidden files (at least on linux). So, another way
+"   is to `mv build/ .bulid/`.
+"
+" - how to make :find fuzzy. Pretty like :buffer. In case where writing ':find
+"   filename' and pressing <Tab> will autocomplete the only match, I want to
+"   just write ':find filename' and press <CR> and get autcompleted 'filename'
+"   opened
+"
+
+""" DONT POLLUTE MY HOME, PLEASE...
+
 if empty($MYVIMRC) | let $MYVIMRC = expand('<sfile>:p') | endif
 
 if empty($XDG_CACHE_HOME)  | let $XDG_CACHE_HOME  = $HOME."/.cache"       | endif
@@ -21,28 +45,34 @@ set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p', 0700)
 set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p', 0700)
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
+
+""" SOME BASIC STUFF:
+
+" use K (shift + k) to find help about anything below
+set nocompatible
+set nowrap
 set undofile
+set number
+set scrolloff=7
+set sidescroll=1
+set sidescrolloff=15
+set shiftwidth=4
+set tabstop=4
 
-" Sets how many lines of history VIM has to remember
-set history=500
-set number relativenumber
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
 
-" Enable filetype plugins
+" HACK! https://stackoverflow.com/questions/79898428/map-esc-to-vim-command-in-vimrc
+func! EscSetup(timerid)
+    nnoremap <silent> <Esc> :nohl<CR>
+endfunc
+autocmd VimEnter * call timer_start(100, 'EscSetup')
+
+syntax enable
 filetype plugin on
 filetype indent on
-set nocindent
-
-" Set to auto read when a file is changed from the outside
-set autoread
-au FocusGained,BufEnter * silent! checktime
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = " "
-
-" :W doas saves the file
-" (useful for handling the permission-denied error)
-command! W execute 'w !doas tee % > /dev/null' <bar> edit!
 
 " 0 -> blinking block.
 " 1 -> blinking block (default).
@@ -52,136 +82,24 @@ command! W execute 'w !doas tee % > /dev/null' <bar> edit!
 " 5 -> blinking bar (xterm).
 " 6 -> steady bar (xterm).
 "
-let &t_SI = "\e[6 q"    "insert
-let &t_SR = "\e[4 q"    "replace
-let &t_EI = "\e[2 q"    "normal
+let &t_SI = "\e[6 q"    " insert
+let &t_SR = "\e[4 q"    " replace
+let &t_EI = "\e[2 q"    " normal
 
-" Set 7 lines to the cursor - when moving vertically using j/k
-set scrolloff=7
-set sidescroll=1
-set sidescrolloff=4
 
-" Turn on the Wild menu
-set wildmenu
+""" FINDING FILES:
 
-" Ignore compiled files
-set wildignore+=*.o,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+set path+=**
+nnoremap <silent> <Space>f :FZF<CR>
 
-" Height of th1 command bar
-set cmdheight=1
 
-" Ignore case when searching
-set ignorecase
+""" PACKAGES:
 
-" When searching try to be smart about cases
-set smartcase
+packadd! editorconfig
 
-" Highlight search results
-set hlsearch
 
-" Makes search act like search in modern browsers
-set incsearch
+""" FILE BROWSING:
 
-" For regular expressions turn magic on
-set magic
+let g:netrw_banner=0    "
+let g:netrw_liststyle=3 " tree view
 
-" Show matching brackets when text indicator is over them
-set showmatch
-
-" No annoying sound
-set belloff=all
-
-" Enable syntax highlighting
-syntax enable
-"
-" Set regular expression engine automatically
-set regexpengine=0
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf-8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
-
-set ai " Auto indent
-set si " Smart indent
-set wrap " Wrap lines
-
-" Map redo to 'U'
-nmap U <C-R>
-
-" Goto matching bracket
-map mm %
-
-" create undo bookmark when using Ctrl-W, Ctrl-U in insert mode
-inoremap <c-u> <c-g>u<c-u>
-inoremap <c-w> <c-g>u<c-w>
-
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<c-u>call VisualSelection('', '')<cr>/<c-r>=@/<cr><cr>
-vnoremap <silent> # :<c-u>call VisualSelection('', '')<cr>?<c-r>=@/<cr><cr>
-
-" Disable highlight search entries
-map <silent> <leader><leader> :noh<cr>
-
-map <silent> <leader>f :FZF<cr>
-
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\ %m%r%h%w\ %f\ in\ %{getcwd()}\ %=\ %l:%c
-
-" Remap VIM 0 to first non-blank character
-map 0 ^
-
-let vim_plug_file=$XDG_DATA_HOME . "/vim/autoload/plug.vim" 
-let vim_plug_url="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-if empty(glob(vim_plug_file))
-    silent execute '!curl --create-dirs -fLo ' . vim_plug_file . " " . vim_plug_url
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin()
-
-Plug 'rose-pine/vim'
-    
-call plug#end()
-
-let g:disable_bg = 1
-colorscheme rosepine_moon
-
-hi Search ctermfg=7 ctermbg=10
-hi Visual ctermbg=0
-
-hi TabLine ctermfg=189 ctermbg=NONE
-hi TabLineFill ctermfg=NONE ctermbg=NONE cterm=NONE
-hi TabLineSel ctermfg=81 ctermbg=NONE
-hi StatusLine ctermfg=81 ctermbg=NONE 

@@ -130,5 +130,5 @@ end
 
 ################################################################################
 
-export PULSE_SERVER=/tmp/pipewire.socket
+# export PULSE_SERVER=/tmp/pipewire.socket
 

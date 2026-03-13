@@ -22,9 +22,11 @@
 	lol = log --format=useful
 	st = status
 	ds = diff --staged
+	d = diff
 	lod = lol -n10
 	co = checkout
-	ca = commit --amend
+	ca = commit --amend --no-edit
+	cae = commit --amend --edit
 	dne = diff --no-ext-diff
 	dse = diff --staged --no-ext-diff
 	c = commit

@@ -73,7 +73,7 @@ vim.keymap.set(
 	{ 'n', 'v' },
 	'<leader>t',
 	function()
-		vim.lsp.buf.workspace_symbol({ includeDeclaration = false })
+		vim.lsp.buf.workspace_symbol(nil, { includeDeclaration = false })
 	end,
 	{ desc = 'show all workspace symbols' }
 )
@@ -89,7 +89,7 @@ vim.keymap.set(
 
 vim.keymap.set(
 	{ 'n' },
-	"J",
+	"L",
 	vim.diagnostic.open_float,
 	{ desc = "Line diagnostics" }
 )

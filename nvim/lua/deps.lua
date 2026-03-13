@@ -104,10 +104,10 @@ later(function()
 
 	require('mini.pick').setup({
 		mappings = {
-			caret_left  = '<C-b>',
-			caret_right = '<C-f>',
-			caret_begin = '<C-a>',
-			caret_end = '<C-e>',
+			-- caret_left  = '<C-b>',
+			-- caret_right = '<C-f>',
+			-- caret_begin = '<C-a>',
+			-- caret_end = '<C-e>',
 
 			choose_in_tabpage = '',
 			-- choose_marked = '<CR>',
@@ -268,8 +268,5 @@ later(function()
 end)
 
 later(function()
-	add('nvim-lua/plenary.nvim')
-	add('nvim-telescope/telescope.nvim')
-
-	require('telescope').setup({})
+	add('tpope/vim-fugitive')
 end)

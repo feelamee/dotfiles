@@ -1,37 +1,47 @@
+add-auto-load-safe-path ~/code/gravity/.gdbinit
+
 define hook-next
-    # if $tui_enabled
-    	refresh
-    # end
+	refresh
 end
 
 define hook-step
-    # if $tui_enabled
-    	refresh
-    # end
+	refresh
 end
 
 define hookpost-next
-    # if $tui_enabled
-    	refresh
-    # end
+	refresh
 end
 
 define hookpost-step
-    # if $tui_enabled
-    	refresh
-    # end
+	refresh
 end
 
-if !$_isvoid($_any_caller_matches)
-    define hook-stop
-        while $_thread && $_any_caller_matches("^__")
-            up-silently
-        end
-    end
+# if !$_isvoid($_any_caller_matches)
+#     define hook-stop
+#         while $_thread && $_any_caller_matches("^__")
+#             up-silently
+#         end
+#     end
+# end
+
+define rwo
+	run &>/dev/null
 end
 
-alias rwo = run &>/dev/null
-alias swo = start &>/dev/null
+define swo
+	start &>/dev/null
+end
+
+define mr
+	make
+	run
+end
+
+define ms
+	make
+	start
+end
+
 set print static-members off
 
 set history save on
