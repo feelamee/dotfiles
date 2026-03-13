@@ -1,4 +1,5 @@
 """ TODO!
+"
 " - how to :find in case-insentive manner
 "
 " - how to ignore some files/directories in :find Maybe a better way is to
@@ -14,10 +15,11 @@
 "   NOTE! :find will ignore hidden files (at least on linux). So, another way
 "   is to `mv build/ .bulid/`.
 "
-" - how to make :find fuzzy. Pretty like :buffer. In case where writing ':find
-"   filename' and pressing <Tab> will autocomplete the only match, I want to
-"   just write ':find filename' and press <CR> and get autcompleted 'filename'
-"   opened
+" - How to make :find fuzzy. Pretty like :buffer.
+" - In case where writing ':find filename' and pressing <Tab> will
+"   autocomplete the only match, I want to just write ':find filename' and
+"   press <CR> and get autcompleted 'filename.txt' or
+"   'anyprefix_filename_anypostfix' opened
 "
 
 """ DONT POLLUTE MY HOME, PLEASE...
